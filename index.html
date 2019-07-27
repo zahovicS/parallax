@@ -2,7 +2,11 @@
 <html lang="es">
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/typed.js"></script>
 </head>
 <body>
 <section class="zoom">
@@ -11,14 +15,22 @@
 	<img src="img/text.png" id="text">
 </section>
 <section class="content">
-	<h2>Background Parallax con JS</h2>
-	<h2>Sitio en construccion</h2>
+	<div id="title">
+		<div id="typed-strings">
+			<h5>Parallax con JS por Zahovic</h5>
+			<h5>Sitio en construccion.</h5>
+		</div>
+		<span id="typed"></span>
+	</div>	
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<a href="pages/form/index.html">ir a los Formularios.</a>
+	<a href="pages/JavaFunc/funt.html">ir a los JS.</a>
+
 </section>
 <script type="text/javascript">
 	let layer1=document.querySelector("#layer1");
@@ -41,9 +53,17 @@
 	document.addEventListener("scroll",function(e){
 		let offset=window.pageYOffset;
 		scroll=offset;
-		text.style.top=-scroll/20+"%";	
+		text.style.top=-scroll/10+"%";	
 	});
 
+	$("document").ready(function(){
+		var typed = new Typed('#typed',{
+                    stringsElement: '#typed-strings',
+                    backSpeed: 30,
+                    typeSpeed: 30,
+                    loop: true
+                    });
+	});
 </script>
 </body>
 </html>
